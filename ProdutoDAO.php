@@ -45,5 +45,14 @@ class ProdutoDAO{
 
         return $comandoSelect->fetch();
     }
+
+    // Método de atualizar produto 
+    public function atualizarProduto($id, $nome, $preco, $quantidade){
+        $sql = "UPDATE produtos SET nome = :nome, preco = :preco, quantidade = :quantidade WHERE id = :id";
+
+        $comandoUpdate = $this->conexao->prepare($sql);
+
+        $comandoUpdate->execute(["nome" => $nome, "preco" => $preco, "quantidade" => $quantidade, "id" => $id]);
+    }
 }
 ?>

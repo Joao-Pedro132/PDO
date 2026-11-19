@@ -46,6 +46,7 @@ $informacoesProdutos = $produto->listar();
                     <td><?=$produto['quantidade']?></td>
                     <!-- Visualizar usando metodo GET-->
                     <td><a href="visualizar.php?id=<?=$produto['id']?>">Vizualizar</a></td>
+                    <td><a href="editar.php?id=<?=$produto['id']?>">Editar</a></td>
                 </tr>
             <?php
             }
