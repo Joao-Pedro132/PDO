@@ -30,6 +30,9 @@ $informacoesProdutos = $produto->listar();
                 <th>Nome</th>
                 <th>Preço</th>
                 <th>Quantidade</th>
+                <th>Vizualizar</th>
+                <th>Editar</th>
+                <th>Excluir</th>
             </tr>
         </thead>
         <tbody>
@@ -41,6 +44,8 @@ $informacoesProdutos = $produto->listar();
                     <td><?=$produto['nome']?></td>
                     <td><?=$produto['preco']?></td>
                     <td><?=$produto['quantidade']?></td>
+                    <!-- Visualizar usando metodo GET-->
+                    <td><a href="visualizar.php?id=<?=$produto['id']?>">Vizualizar</a></td>
                 </tr>
             <?php
             }

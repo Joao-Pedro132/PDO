@@ -34,5 +34,16 @@ class ProdutoDAO{
         // Executa o comando passando os valores
         $comandoInsert->execute(["nome" => $nome, "preco" => $preco, "quantidade" => $quantidade]);
     }
+
+    // Método para listar um item pelo id
+    public function buscarPorId($id){
+        $sql = "SELECT * FROM produtos WHERE id = :id";
+
+        $comandoSelect = $this->conexao->prepare($sql);
+
+        $comandoSelect->execute(["id" => $id]);
+
+        return $comandoSelect->fetch();
+    }
 }
 ?>
