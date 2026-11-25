@@ -47,6 +47,13 @@ $informacoesProdutos = $produto->listar();
                     <!-- Visualizar usando metodo GET-->
                     <td><a href="visualizar.php?id=<?=$produto['id']?>">Vizualizar</a></td>
                     <td><a href="editar.php?id=<?=$produto['id']?>">Editar</a></td>
+                    <td>
+                        <form action="excluir.php" method="POST">
+                            <input type="hidden" value="<?=$produto['id']?>" name="id">
+
+                            <button type="submit">Excluir</button>
+                        </form>
+                    <td>
                 </tr>
             <?php
             }
@@ -55,5 +62,7 @@ $informacoesProdutos = $produto->listar();
     </table>
     <br>
     <a href="cadastrar.php">Cadastrar novo Produto</a>
+    <br><br>
+    <a href="cadastrarPedido.php">Cadastrar novo pedido </a>
 </body>
 </html>
